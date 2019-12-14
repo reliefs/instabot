@@ -35,7 +35,7 @@ bot = Bot()
 bot.login(username=args.u, password=args.p, proxy=args.proxy)
 
 user_id = bot.get_user_id_from_username(args.user)
-user_medias = bot.get_user_medias(user_id, filtration=None)
+user_medias = get_total_user_medias(user_id)
 for media_id in user_medias:
     bot.api.media_info(media_id)
     json = bot.api.last_json
